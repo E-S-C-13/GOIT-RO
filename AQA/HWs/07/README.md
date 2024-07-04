@@ -1,21 +1,15 @@
-# Критерії приймання
+Tema 7
 
-- Створено репозиторій `goit-js-hw-06`.
-- Домашня робота містить два посилання: на вихідні файли і робочу сторінку на `GitHub Pages`.
-- Завдання виконані у точній відповідності до ТЗ (забороняється змінювати вихідний HTML завдання).
-- В консолі відсутні помилки і попередження під час відкриття живої сторінки завдання.
-- Імена змінних і функцій - зрозумілі та описові.
-- Код відформатований за допомогою `Prettier`.
 
-## Стартові файли
 
-У [папці src](./src) знайдеш стартові файли з готовою розміткою і підключеними файлами скриптів для кожного завдання. Скопіюй їх собі у проект. Для цього завантаж цей репозиторій як архів або використовуй [сервіс DownGit](https://downgit.github.io/) для завантаження окремої папки з репозиторія.
+Sarcina 1
 
-## Завдання 1
 
-HTML містить список категорій `ul#categories`.
 
-```html
+HTML conține o listă de categorii ul#categories.
+
+
+
 <ul id="categories">
   <li class="item">
     <h2>Animals</h2>
@@ -45,18 +39,18 @@ HTML містить список категорій `ul#categories`.
     </ul>
   </li>
 </ul>
-```
 
-Напиши скрипт, який:
 
-1. Порахує і виведе в консоль кількість категорій в `ul#categories`, тобто елементів `li.item`.
-2. Для кожного элемента `li.item` у спику `ul#categories`, знайде і виведе в консоль текст заголовку елемента (тегу `<h2>`) і кількість елементів в категорії (усіх `<li>`, вкладених в нього).
 
-Для виконання цього завдання потрібно використати метод forEach() і властивості навігації по DOM.
+Scrie un script care:
 
-В результаті, в консолі будуть виведені наступні повідомлення.
 
-```bash
+
+Numără și afișează în consolă numărul de categorii din ul#categories, adică elementele li.item.
+Pentru fiecare element li.item din lista ul#categories, să găsească și să afișeze în consolă textul titlului elementului (tag-ul <h2>) și numărul de elemente din categoria respectivă (toate <li>, imbricate în ea).
+Astfel, în consolă vor fi afișate următoarele mesaje:
+
+
 Number of categories: 3
 
 Category: Animals
@@ -67,90 +61,77 @@ Elements: 3
 
 Category: Technologies
 Elements: 5
-```
 
-## Завдання 2
 
-HTML містить порожній список `ul#ingredients`.
 
-```html
+Sarcina 2
+
+
+
+HTML conține o listă goală ul#ingredients.
+
+
+
 <ul id="ingredients"></ul>
-```
 
-JavaScript містить масив рядків.
 
-```js
+
+JavaScript conține un array de șiruri de caractere.
+
+
+
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
 ];
-```
 
-Напиши скрипт, який для кожного елемента масиву `ingredients`:
 
-1. Створить окремий елемент `<li>`. Обов'язково використовуй метод  `document.createElement()`.
-2. Додасть назву інгредієнта як його текстовий вміст.
-3. Додасть елементу клас `item`.
-4. Після чого, вставить усі `<li>` за одну операцію у список `ul.ingredients`.
 
-## Завдання 3
+Scrie un script care, pentru fiecare element din array-ul ingredients:
 
-Напиши скрипт для створення галереї зображень на підставі масиву даних. HTML містить список `ul.gallery`.
 
-```html
+
+Să creeze un element <li> separat. Nu uita să folosești metoda document.createElement().
+Va adăuga numele ingredientului ca și conținut text.
+Va adăuga clasa item la element.
+Va insera toate <li> într-o singură operație în lista ul#ingredients.
+
+
+Sarcina 3
+
+
+
+Scrie un script care să creeze o galerie de imagini dintr-un set de date. Codul HTML conține lista ul.gallery.
+
+
+
 <ul class="gallery"></ul>
-```
 
-Використовуй масив об'єктів `images` для створення елементів `<img>`, вкладених в `<li>`. Для створення розмітки використовуй шаблонні рядки і метод `insertAdjacentHTML()`.
 
-- Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
-- Додай мінімальне оформлення галереї флексбоксами або грідами через CSS
-  класи.
 
-```js
+Folosește array-ul de obiecte images pentru a crea elemente <img>, imbricate în <li>. Utilizează șiruri de șabloane și metoda insertAdjacentHTML() pentru a crea tag-uri.
+
+
+
+Toate elementele galeriei trebuie adăugate la DOM printr-o singură operație de adăugare.
+Stilizează ușor galeria folosind flexbox sau grids prin clase CSS.
+
+
 const images = [
   {
-    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
-    alt: 'White and Black Long Fur Cat',
+    url: "<https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260>",
+    alt: "White and Black Long Fur Cat",
   },
   {
-    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260',
-    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+    url: "<https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260>",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
   },
   {
-    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260',
-    alt: 'Group of Horses Running',
+    url: "<https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260>",
+    alt: "Group of Horses Running",
   },
 ];
-```
-## Завдання 4 (виконувати не обов'язково)
-
-Напиши скрипт створення і очищення колекції елементів. Користувач вводить кількість елементів в `input` і натискає кнопку `Створити`, після чого рендериться колекція. Натисненням на кнопку `Очистити`, колекція елементів очищається.
-
-```html
-<div id="controls">
-  <input type="number" min="1" max="100" step="1" />
-  <button type="button" data-create>Create</button>
-  <button type="button" data-destroy>Destroy</button>
-</div>
-
-<div id="boxes"></div>
-```
-
-Створи функцію `createBoxes(amount)`, яка приймає один параметр - число. Функція створює стільки `<div>`, скільки вказано в `amount` і додає їх у `div#boxes`.
-
-1. Розміри найпершого `<div>` - 30px на 30px.
-2. Кожен елемент після першого повинен бути ширшим і вищим від попереднього на 10px.
-3. Всі елементи повинні мати випадковий колір фону у форматі HEX. Використовуй готову функцію `getRandomHexColor` для отримання кольору.
-
-```js
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
-```
-
-Створи функцію `destroyBoxes()`, яка очищає вміст `div#boxes`, у такий спосіб видаляючи всі створені елементи.
