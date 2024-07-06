@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 10</title>
+  </head>
+  <body>
+    <button id="fetchToDoList">function (fetchToDoList)</button></br></br>
+
+    <button id="fetchToDoID">function (fetchToDoID)</button>
+    <label for="ToDoID">ID:</label>
+    <input id="ToDoID" type="number" min="1" max="100" step="1" value="1" /></br></br>
+
+
+    <label for="userId">User ID:</label>
+    <input type="number" id="userId">
+    <label for="title">Title:</label>
+    <input type="text" id="title">
+    <label for="completed">Completed:</label>
+    <input type="checkbox" id="completed">
+    <button id="createToDo">Create To-Do</button>
+    </br></br>
+
+    <label for="updateId">Update ID:</label>
+    <input type="number" id="updateId">
+    <label for="updateTitle">Update Title:</label>
+    <input type="text" id="updateTitle">
+    <label for="updateCompleted">Update Completed:</label>
+    <input type="checkbox" id="updateCompleted">
+    <button id="updateToDo">Update To-Do</button>
+    </br></br>
+
+    <b>Console output:</b><div id="log"><br></div> <!--Console output in HTML-->
+    <script src="requests.js" type="module"></script>
+  </body>
+</html>
