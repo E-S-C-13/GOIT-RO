@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: Cypress Tests
 on: push
 jobs:
   cypress-run:
@@ -7,11 +7,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          working-directory: AQA/HWs/cypress-goit
+          path: AQA/HWs/cypress-goit
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v6.7.1
         with:
-          working-directory: AQA/HWs/cypress-goit
-
+          path: AQA/HWs/cypress-goit
+        env:
+          # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
+          # in GitHub repo → Settings → Secrets → Actions
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
