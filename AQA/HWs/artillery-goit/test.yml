@@ -1,0 +1,39 @@
+config:
+  target: "https://api.mocky.io/v3"
+  phases:
+    - duration: 60 # 60 seconds
+      arrivalRate: 1 # 1 request/second
+      rampTo: 10 # ramping up to 10 requests/second
+      name: 'Ramp-up Load Test for mocky.io'
+
+  plugins:
+    ensure: {}
+
+  ensure:
+    thresholds:
+      - http.response_time.p95: 500 
+      - http.response_time.max: 1000
+    conditions:
+      - expression: vusers.failed == 0
+      - expression: http.codes.200 / http.requests >= 0.5 # half should be 200
+      - expression: http.codes.201 / http.requests >= 0.5 # half should be 201
+  payload:
+    path: 'data.csv' #data for Post request payload
+    fields:
+      - title
+      - body
+
+scenarios:
+  - flow:
+      - get:
+          name: "GET Request"
+          url: "/80cc3b6c-da58-4c6c-bd7a-55f1bf1c68e8" # GET Endpoint
+          
+      - post:
+          name: "POST Request"
+          url: "/31182e6e-55ce-4818-a800-8bd697d8dd50" # POST Endpoint
+          json:
+            title: '{{ title }}'
+            body: '{{ body }}'
+
+      - log: "POST response title: {{ title }}, response body: {{ body }}"
